@@ -7,18 +7,17 @@
  */
 void print_stack(stack_t **stack_head, unsigned int unused_counter)
 {
-    stack_t *current;
+	stack_t *current;
 
-    (void)unused_counter;
+	(void)unused_counter;
 
-    current = *stack_head;
-    if (current == NULL)
-        return;
+	current = *stack_head;
+	if (current == NULL)
+		return;
 
-    while (current)
-    {
-        printf("%d\n", current->n);
-        current = current->next;
-    }
+	while (current)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
 }
-
