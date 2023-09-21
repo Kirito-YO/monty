@@ -1,17 +1,17 @@
 #include "monty.h"
 /**
- * print_stack - Prints the elements of the stack
- * @stack_head: Pointer to the head of the stack
- * @unused_counter: Unused counter
+ * back_stack - Prints the elements of the stack
+ * @stk_tete: Pointer to the head of the stack
+ * @useless_ctr: Unused counter
  * Return: No return value
  */
-void print_stack(stack_t **stack_head, unsigned int unused_counter)
+void back_stack(stack_t **stk_tete, unsigned int useless_ctr)
 {
 	stack_t *current;
 
-	(void)unused_counter;
+	(void)useless_ctr;
 
-	current = *stack_head;
+	current = *stk_tete;
 	if (current == NULL)
 		return;
 
@@ -23,12 +23,12 @@ void print_stack(stack_t **stack_head, unsigned int unused_counter)
 }
 
 /**
- * push_to_stack - Adds a node to the stack
- * @stack_head: Pointer to the head of the stack
+ * go_stack - Adds a node to the stack
+ * @stk_tete: Pointer to the head of the stack
  * @line_number: Line number
  * Return: No return
  */
-void push_to_stack(stack_t **stack_head, unsigned int line_number)
+void go_stack(stack_t **stk_tete, unsigned int line_number)
 {
 	int value, index = 0, flag = 0;
 
@@ -46,7 +46,7 @@ void push_to_stack(stack_t **stack_head, unsigned int line_number)
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			fclose(monty_bus.monty_file);
 			free(monty_bus.line_content);
-			free_stack(*stack_head);
+			free_stack(*stk_tete);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -55,12 +55,12 @@ void push_to_stack(stack_t **stack_head, unsigned int line_number)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		fclose(monty_bus.monty_file);
 		free(monty_bus.line_content);
-		free_stack(*stack_head);
+		free_stack(*stk_tete);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(monty_bus.arg_value);
 	if (monty_bus.stack_mode == 0)
-		add_node_to_stack(stack_head, value);
+		add_node_to_stack(stk_tete, value);
 	else
-		add_node_to_queue(stack_head, value);
+		add_node_to_queue(stk_tete, value);
 }
