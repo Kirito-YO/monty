@@ -21,7 +21,7 @@ void print_stack(stack_t **stack_head, unsigned int unused_counter)
 		current = current->next;
 	}
 }
-<<<<<<< HEAD
+
 /**
  * push_to_stack - Adds a node to the stack
  * @stack_head: Pointer to the head of the stack
@@ -30,38 +30,37 @@ void print_stack(stack_t **stack_head, unsigned int unused_counter)
  */
 void push_to_stack(stack_t **stack_head, unsigned int line_number)
 {
-    int value, index = 0, flag = 0;
-    if (monty_bus.arg_value)
-    {
-        if (monty_bus.arg_value[0] == '-')
-            index++;
-        for (; monty_bus.arg_value[index] != '\0'; index++)
-        {
-            if (monty_bus.arg_value[index] > 57 || monty_bus.arg_value[index] < 48)
-                flag = 1;
-        }
-        if (flag == 1)
-        {
-            fprintf(stderr, "L%d: usage: push integer\n", line_number);
-            fclose(monty_bus.monty_file);
-            free(monty_bus.line_content);
-            free_stack(*stack_head);
-            exit(EXIT_FAILURE);
-        }
-    }
-    else
-    {
-        fprintf(stderr, "L%d: usage: push integer\n", line_number);
-        fclose(monty_bus.monty_file);
-        free(monty_bus.line_content);
-        free_stack(*stack_head);
-        exit(EXIT_FAILURE);
-    }
-    value = atoi(monty_bus.arg_value);
-    if (monty_bus.stack_mode == 0)
-        add_node_to_stack(stack_head, value);
-    else
-        add_node_to_queue(stack_head, value);
+	int value, index = 0, flag = 0;
+
+	if (monty_bus.arg_value)
+	{
+		if (monty_bus.arg_value[0] == '-')
+			index++;
+		for (; monty_bus.arg_value[index] != '\0'; index++)
+		{
+			if (monty_bus.arg_value[index] > 57 || monty_bus.arg_value[index] < 48)
+				flag = 1;
+		}
+		if (flag == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fclose(monty_bus.monty_file);
+			free(monty_bus.line_content);
+			free_stack(*stack_head);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(monty_bus.monty_file);
+		free(monty_bus.line_content);
+		free_stack(*stack_head);
+		exit(EXIT_FAILURE);
+	}
+	value = atoi(monty_bus.arg_value);
+	if (monty_bus.stack_mode == 0)
+		add_node_to_stack(stack_head, value);
+	else
+		add_node_to_queue(stack_head, value);
 }
-=======
->>>>>>> b59047d7dfd6ff276dc461468be0ca4a7c78123b
