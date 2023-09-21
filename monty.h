@@ -58,5 +58,13 @@ extern MontyBus monty_bus;
 void back_stack(stack_t **stk_tete, unsigned int useless_ctr);
 void go_stack(stack_t **stk_tete, unsigned int line_number);
 void back_top(stack_t **stk_tete, unsigned int line_number);
+void rm_stack(stack_t **stk_tete, unsigned int useless_ctr);
+void swap_objects(stack_t **stk_tete, unsigned int useless_ctr);
+void f_add_objects(stack_t **stk_tete, unsigned int useless_ctr);
+void f_nothing(stack_t **stk_tete, unsigned int useless_ctr);
+void free_stack(stack_t *stk_tete);
+int run(char *line_content, stack_t **stk_tete, unsigned int useless_ctr, FILE *monty_file);
+void add_node_to_queue(stack_t **stk_tete, int new_value);
+void add_node_to_stack(stack_t **stk_tete, int new_value);
 
 #endif

@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		useless_ctr++;
 		if (lire_ligne > 0)
 		{
-			execute(line_content, &stk_tete, useless_ctr, monty_file);
+			run(line_content, &stk_tete, useless_ctr, monty_file);
 		}
 		free(line_content);
 	}
