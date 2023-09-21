@@ -55,8 +55,8 @@ typedef struct MontyBus
 } MontyBus;
 extern MontyBus monty_bus;
 
-void print_stack(stack_t **stack_head, unsigned int unused_counter);
-void push_to_stack(stack_t **stack_head, unsigned int line_number);
-void print_top(stack_t **stack_head, unsigned int line_number);
+void back_stack(stack_t **stk_tete, unsigned int useless_ctr);
+void go_stack(stack_t **stk_tete, unsigned int line_number);
+void back_top(stack_t **stk_tete, unsigned int line_number);
 
 #endif
