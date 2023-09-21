@@ -7,6 +7,6 @@
  */
 void f_nothing(stack_t **stk_tete, unsigned int useless_ctr)
 {
-    (void)useless_ctr;
-    (void)stk_tete;
+	(void)useless_ctr;
+	(void)stk_tete;
 }
