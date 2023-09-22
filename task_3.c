@@ -9,7 +9,7 @@ void swap_objects(stack_t **stk_tete, unsigned int useless_ctr)
 {
 	stack_t *temp;
 	int len = 0, aux;
-	
+
 	temp = *stk_tete;
 	while (temp)
 	{
