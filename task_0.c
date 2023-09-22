@@ -93,11 +93,11 @@ void free_stack(stack_t *stk_tete)
 int run(char *line_content, stack_t **stk_tete, unsigned int useless_ctr, FILE *monty_file)
 {
 	instruction_t opst[] = {
-		{"go_stack", go_stack}, {"back_stack", back_stack}, {"back_top", back_top},
-		{"rm_stack", rm_stack},
-		{"swap_objects", swap_objects},
-		{"f_add_objects", f_add_objects},
-		{"f_nothing", f_nothing},
+		{"push", go_stack}, {"pall", back_stack}, {"pint", back_top},
+		{"pop", rm_stack},
+		{"swap", swap_objects},
+		{"add", f_add_objects},
+		{"nop", f_nothing},
 		{NULL, NULL}
 	};
 
