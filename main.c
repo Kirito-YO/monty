@@ -1,5 +1,5 @@
 #include "monty.h"
-MontyBus monty_bus = {NULL, NULL, NULL, 0};
+#include "monty1.h"
 /**
  * main - Monty code interpreter
  * @argc: Number of arguments

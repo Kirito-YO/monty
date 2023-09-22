@@ -7,7 +7,8 @@
  * @monty_file: Pointer to Monty file
  * Return: No return
  */
-int run(char *line_content, stack_t **stk_tete, unsigned int useless_ctr, FILE *monty_file)
+int run(char *line_content, stack_t **stk_tete,
+		unsigned int useless_ctr, FILE *monty_file)
 {
 	instruction_t opst[] = {
 		{"push", go_stack}, {"pall", back_stack}, {"pint", back_top},
